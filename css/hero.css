@@ -1,0 +1,438 @@
+
+.unify-hero {
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-default);
+  padding: 32px 0;
+  overflow: hidden;
+}
+.unify-hero::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 0.1) 40%, rgba(19, 19, 19, 0) 100%);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.unify-container .unify-hero-row {
+  gap: 40px;
+  --bs-gutter-x: 0;
+}
+
+/* Left Column: Content */
+.unify-hero-left {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  order: 2;
+}
+
+/* Series Badge */
+.unify-section-badge.hero-badge {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.7px;
+  color: var(--cyan-100);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-color: var(--cyan-20);
+  background: var(--cyan-10);
+  margin-bottom: 14px;
+}
+
+.series-badge-icon {
+  width: 11px;
+  height: 11px;
+  color: var(--cyan-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Headline */
+.unify-hero-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.4px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.unify-hero-info {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+  margin-bottom: 26px;
+  max-width: 100%;
+}
+
+/* CTA Group */
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.btn-primary-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 6px;
+  box-shadow: 0 0 18px rgba(254, 95, 0, 0.55);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-orange:hover {
+  background-color: var(--orange-600);
+  color: var(--orange-dark);
+  box-shadow: 0 0 26px rgba(254, 95, 0, 0.75);
+}
+
+.hero-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray-400);
+  font-family: var(--font-JetBrains);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.guarantee-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--orange-default);
+  flex-shrink: 0;
+}
+
+/* Right Column: Turbofan showcase on Mobile */
+.unify-hero-right {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin-top: 24px;
+  background: #131313 url('../images/hero-bg.webp') no-repeat 56% 40% / 185% auto;
+  border-radius: 12px;
+  border: 1px solid var(--cyan-20);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 24px 32px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  order: 1;
+}
+
+.hero-device-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Floating Live Gauge Card */
+.hero-gauge-card {
+  position: relative;
+  width: 150px;
+  background: var(--white-5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--white-10);
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 5;
+}
+
+.gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.gauge-label,
+.gauge-tag {
+  font-family: var(--font-JetBrains);
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: var(--font-medium);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--cyan-100);
+}
+.gauge-tag {
+  color: var(--orange-400);
+}
+
+.gauge-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 4px 0;
+}
+
+.gauge-bar-fill {
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan-default) 0%, #84cc16 65%, var(--orange-default) 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+  transition: 13s all;
+}
+
+.gauge-rpm-value {
+  font-family: var(--font-JetBrains);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-300);
+  text-align: right;
+}
+
+
+@media (min-width: 768px) {
+  .unify-hero {
+    padding: 50px 0 46px;
+    background-image: url('../images/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: 72% center;
+    background-size: cover;
+  }
+
+  .unify-hero::after {
+    background: linear-gradient(90deg, rgba(19, 19, 19, 0.88) 0%, rgba(19, 19, 19, 0.5) 55%, rgba(19, 19, 19, 0.1) 85%),
+                linear-gradient(180deg, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 0) 100%);
+  }
+
+  .landing-hero-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .series-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+  }
+
+  .unify-hero-title {
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: -0.6px;
+    margin-bottom: 18px;
+  }
+
+  .unify-hero-desc {
+    font-size: 14.5px;
+    line-height: 23px;
+    margin-bottom: 26px;
+    max-width: 380px;
+  }
+
+  .hero-cta-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    width: auto;
+  }
+
+  .btn-primary-orange {
+    width: auto;
+    font-size: 14.5px;
+    padding: 12px 26px;
+  }
+
+  .hero-guarantee {
+    font-size: 11.5px;
+  }
+
+  .unify-hero-right {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: visible;
+    order: 2;
+  }
+
+  .hero-device-wrapper {
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .hero-gauge-card {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 195px;
+    padding: 11px 14px;
+  }
+
+  .gauge-label, .gauge-tag {
+    font-size: 8px;
+  }
+
+  .gauge-rpm-value {
+    font-size: 11.5px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .unify-hero {
+    padding: var(--p-120) 0;
+    background-image: url('../images/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .unify-hero::after {
+    background: linear-gradient(90deg, rgba(19, 19, 19, 0.82) 0%, rgba(19, 19, 19, 0.38) 46%, rgba(19, 19, 19, 0) 68%),
+                linear-gradient(180deg, rgba(19, 19, 19, 0.35) 0%, rgba(19, 19, 19, 0) 100%);
+  }
+  .unify-hero-row {
+    --bs-gutter-x: 1.6842vw;
+    gap: 0;
+  }
+  .unify-hero-left {
+    width: auto;
+    order: 1;
+  } 
+  .unify-section-badge.hero-badge {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: -0.0547vw; 
+    padding: var(--p-6) var(--p-16);
+    margin-bottom: var(--m-24);
+    border-width: var(--border-1);
+    gap: var(--gap-8);
+  }
+  .unify-section-badge.hero-badge img {
+    display: block;
+    width: 0.7813vw;
+    height: auto;
+    background-size: cover;
+  }
+
+  /* Headline - pixel-perfect matching 3-line layout */
+  .unify-hero-title {
+    font-size:  var(--text-72);
+    line-height: var(--leading-76);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-1_44);
+    margin-bottom: var(--m-24);
+  }
+  .highlight-cyan {
+    color: var(--cyan-default);
+  }
+  .unify-hero-info {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    font-weight: var(--font-reguler);
+    color: var(--gray-400);
+    max-width: var(--w-554);
+    margin-bottom: var(--m-40);
+  }
+
+  /* CTA Group */
+  .hero-cta-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8750vw;
+    width: auto;
+  }
+  .hero-guarantee {
+    font-family: var(--font-JetBrains);
+    font-weight: var(--font-medium);
+    color: var(--gray-600);
+    gap: var(--gap-12);
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: var(--tracking-0_7);
+  }
+  .hero-guarantee img {
+    display: block;
+    width: auto;
+    height: 1.5625vw;
+    background-size: cover;
+    
+  }
+
+  .unify-hero-right,
+  .hero-device-wrapper {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  /* Floating Live Gauge Card */
+  .hero-gauge-card {
+    position: absolute;
+    right: 3.7500vw;
+    bottom: 3.7500vw;
+    left: auto;
+    z-index: 99;
+    width: var(--w-256);
+    border-radius: var(--radius-12);
+    border-width: var(--border-1);
+    padding: var(--p-16);
+    backdrop-filter: blur(0.6250vw);
+    -webkit-backdrop-filter: blur(0.6250vw);
+  }
+  .gauge-header {
+    margin-bottom: var(--m-8);
+  }
+  .gauge-label, .gauge-tag {
+    font-size: var(--text-10);
+    line-height: var(--leading-15);
+  }
+  .gauge-bar-track {
+    height:  var(--h-8);
+    border-radius: var(--radius-24);
+    margin: var(--m-8) 0;
+  }
+
+  .gauge-bar-fill {
+    box-shadow: 0 0 0.4688vw rgba(0, 229, 255, 0.5);
+  }
+
+  .gauge-rpm-value {
+    font-size: var(--text-12);
+    line-height: var(--leading-18);
+  }
+}

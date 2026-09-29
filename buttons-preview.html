@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AERO-FORCE | Unify Button System Preview</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/buttons.css">
+
+  <style>
+    body {
+      background-color: #131313;
+      color: #ffffff;
+      font-family: var(--font-inter);
+      padding: 40px 20px 80px;
+    }
+    .preview-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .preview-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .preview-header h1 {
+      font-family: var(--font-Archivo-Narrow);
+      font-size: 38px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .preview-header p {
+      color: #8e959e;
+      font-size: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .button-card {
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 36px 30px;
+      margin-bottom: 32px;
+    }
+    .button-card-title {
+      font-family: var(--font-JetBrains);
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--cyan-default, #00E5FF);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 12px;
+    }
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      background: #ffffff;
+      padding: 40px 24px;
+      border-radius: 12px;
+      border: 2px dashed #7b2cbf;
+    }
+    .button-subgroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+    .button-label {
+      font-family: var(--font-JetBrains);
+      font-size: 11px;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .states-demo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .state-box {
+      background: #222222;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .state-label {
+      font-family: var(--font-JetBrains);
+      font-size: 11px;
+      color: #aaaaaa;
+      margin-bottom: 12px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-container">
+    <header class="preview-header">
+      <h1>AERO-FORCE Button System</h1>
+      <p>Pixel-perfect interactive buttons with #FE5F00 background, 0 4px 30px #FE5F0066 glowing shadow, and all states.</p>
+    </header>
+
+    <!-- TYPE 1: PILL BUTTON -->
+    <section class="button-card">
+      <div class="button-card-title">
+        <span>Type 1: Header / Pill Button (.unify-btn-pill)</span>
+        <span>Border-Radius: 999px</span>
+      </div>
+      <div class="button-group">
+        <div class="button-subgroup">
+          <span class="button-label">Dark Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-pill unify-btn-dark-text">GET TURBO</button>
+        </div>
+        <div class="button-subgroup">
+          <span class="button-label">White Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-pill unify-btn-white-text">GET TURBO</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPE 2: OFFER BUTTON -->
+    <section class="button-card">
+      <div class="button-card-title">
+        <span>Type 2: Primary CTA / Offer Button (.unify-btn-offer)</span>
+        <span>Border-Radius: 10px</span>
+      </div>
+      <div class="button-group">
+        <div class="button-subgroup">
+          <span class="button-label">Dark Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-offer unify-btn-dark-text">CLAIM YOUR OFFER</button>
+        </div>
+        <div class="button-subgroup">
+          <span class="button-label">White Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-offer unify-btn-white-text">CLAIM YOUR OFFER</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPE 3: COMPLETE PURCHASE WITH GUARANTEE -->
+    <section class="button-card">
+      <div class="button-card-title">
+        <span>Type 3: Secure Purchase CTA (.unify-btn-purchase)</span>
+        <span>Two-line with Arrow & Guarantee Subtext</span>
+      </div>
+      <div class="button-group">
+        <div class="button-subgroup">
+          <span class="button-label">Dark Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-purchase unify-btn-dark-text">
+            <span class="unify-btn-title">
+              COMPLETE MY SECURE PURCHASE <span class="unify-btn-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="unify-btn-subtext">TRY IT RISK FREE! - 90 DAY MONEY BACK GUARANTEE!</span>
+          </button>
+        </div>
+        <div class="button-subgroup">
+          <span class="button-label">White Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-purchase unify-btn-white-text">
+            <span class="unify-btn-title">
+              COMPLETE MY SECURE PURCHASE <span class="unify-btn-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="unify-btn-subtext">TRY IT RISK FREE! - 90 DAY MONEY BACK GUARANTEE!</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPE 4: ADD TO MY ORDER -->
+    <section class="button-card">
+      <div class="button-card-title">
+        <span>Type 4: Upsell CTA Button (.unify-btn-order)</span>
+        <span>Single-line with Animated Arrow</span>
+      </div>
+      <div class="button-group">
+        <div class="button-subgroup">
+          <span class="button-label">Dark Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-order unify-btn-dark-text">
+            <span>ADD TO MY ORDER</span>
+            <span class="unify-btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+        <div class="button-subgroup">
+          <span class="button-label">White Text Variant (Design Match)</span>
+          <button type="button" class="unify-btn unify-btn-order unify-btn-white-text">
+            <span>ADD TO MY ORDER</span>
+            <span class="unify-btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL STATES DEMO -->
+    <section class="button-card">
+      <div class="button-card-title">
+        <span>Interactive States Test (.unify-btn)</span>
+        <span>Focus, Focus-Within, Active, Disabled</span>
+      </div>
+      <div class="states-demo">
+        <div class="state-box">
+          <span class="state-label">Normal State</span>
+          <button class="unify-btn unify-btn-offer unify-btn-dark-text" style="font-size: 14px; padding: 10px 20px;">NORMAL</button>
+        </div>
+        <div class="state-box">
+          <span class="state-label">Hover (Lift & Glow)</span>
+          <button class="unify-btn unify-btn-offer unify-btn-dark-text" style="font-size: 14px; padding: 10px 20px; transform: translateY(-2px);">HOVERED</button>
+        </div>
+        <div class="state-box">
+          <span class="state-label">Active / Pressed</span>
+          <button class="unify-btn unify-btn-offer unify-btn-dark-text" style="font-size: 14px; padding: 10px 20px; transform: translateY(1px) scale(0.99);">ACTIVE</button>
+        </div>
+        <div class="state-box">
+          <span class="state-label">Disabled</span>
+          <button class="unify-btn unify-btn-offer unify-btn-dark-text" disabled style="font-size: 14px; padding: 10px 20px;">DISABLED</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

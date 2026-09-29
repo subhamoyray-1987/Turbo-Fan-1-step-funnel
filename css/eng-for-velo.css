@@ -1,0 +1,160 @@
+
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. BASE / MOBILE VIEWS (till 667.98px)
+   -------------------------------------------------------------------------- */
+.unify-velocity {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+}
+
+/* Heading & Two-Tone Accent Line */
+.velocity-heading-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.velocity-heading {
+  margin-bottom: 16px;
+}
+
+/* Feature Cards Grid (Stacked on Mobile) */
+.velocity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+}
+.velocity-card {
+  background: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.velocity-card:hover {
+  border-color: var(--cyan-20);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 14px rgba(0, 229, 255, 0.12);
+}
+
+/* Icon Squircle Badge */
+.velocity-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--cyan-10);
+  border: 1px solid var(--cyan-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.velocity-card:hover .velocity-icon-box {
+  background-color: #2c383c;
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.1);
+}
+.velocity-icon-box img {
+  display: block;
+  width:auto;
+  height: 20px;
+  background-size: cover;
+}
+.velocity-card-title {
+  color: var(--gray-300);
+  margin-bottom: 16px;
+}
+.velocity-card-desc {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-400);
+  margin-bottom: 0;
+}
+
+
+@media (min-width: 768px) {
+  .unify-velocity {
+    padding: 60px 0;
+  }
+  .velocity-heading-wrapper {
+    margin-bottom: 40px;
+  }
+  .velocity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .velocity-card {
+    padding: 22px 20px;
+    border-radius: 12px;
+  }
+  .velocity-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  .velocity-desc {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
+
+@media (min-width: 1024px) {
+  .unify-section.unify-velocity {
+    padding: var(--p-60) 0;
+    padding-top: var(--p-120);
+  }
+  .velocity-heading-wrapper {
+    margin-bottom: var(--m-64);
+  }
+  .velocity-heading {
+    margin-bottom: var(--m-16);
+  }
+  .velocity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-32);
+  }
+  .velocity-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    padding: var(--p-40);
+  }
+  .velocity-card:hover {
+    transform: translateY(-0.1563vw);
+    border-color: rgba(0, 218, 243, .2);
+    box-shadow: 0 0.7813vw 2.1875vw rgba(0, 0, 0, 0.65), 0 0 1.2500vw rgba(0, 229, 255, 0.14);
+  }
+  .velocity-icon-box {
+    width:5.0000vw;
+    height: 5.0000vw;
+    border-radius: 0.9375vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 0.0781vw;
+    margin-bottom: 2.5000vw;
+  }
+  .velocity-icon-box img {
+    display: block;
+    width: auto;
+    height: 2.3438vw;
+    background-size: cover;
+  }
+  .velocity-card-title {
+    margin-bottom: var(--m-16);
+  }
+  .velocity-card-desc {
+    font-size: var(--text-16);
+    line-height: var(--leading-26);
+  }
+}

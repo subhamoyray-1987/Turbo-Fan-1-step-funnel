@@ -1,0 +1,647 @@
+
+:root {
+
+  /*==== Typography ==== */
+  --font-inter:               "Inter", sans-serif;
+  --font-Archivo-Narrow:      "Archivo Narrow", sans-serif;
+  --font-JetBrains:           "JetBrains Mono", monospace;
+
+  --white:                    #fff;
+  --white-15:                 #FFFFFF26;
+  --white-10:                 #FFFFFF1A;
+  --white-5:                  #FFFFFF0D;
+
+  --black-50: #2A2A2A80;
+
+  /* == Brand — Gray == */
+  --bg-default:               #131313;   
+  --gray-950:                 #1C1B1B;   
+  --gray-900:                 #2A2A2ACC; 
+  --gray-850:                 #2A2A2A;   
+  --gray-800:                 #353534;   
+  --gray-750:                 #3B494C;
+  --gray-700:                 #34383f;   
+  --gray-600:                 #849396; 
+  --gray-500:                 #E5E2E1B2;
+  --gray-400:                 #BAC9CC;
+  --gray-300:                 #E5E2E1;
+  --gray-100:                 #e8eaed;
+  --white:                    #ffffff;
+
+  /* == Brand — Cyan == */
+  --cyan-default:             #00E5FF;
+  --cyan-400:                 #00DAF3;
+  --cyan-300:                 #00dbf3;
+  --cyan-200:                 #9CF0FF;
+  --cyan-100:                 #C3F5FF;
+  --cyan-20:                  #C3F5FF33;
+  --cyan-10:                  #C3F5FF1A;
+  --cyan-5:                   #C3F5FF0D;
+
+  /* == Brand — Orange == */
+  --orange-dark:              #521900;
+  --orange-900:               #5A1C00;
+  --orange-default:           #FE5F00;
+  --orange-700:               #e85d0c;
+  --orange-600:               #ff6b1a;
+  --orange-500:               #ff8a3d;
+  --orange-400:               #FFB599;
+  --orange-300:               #FFB4AB;
+  --orange-200:               #FFB4AB4D;
+
+  /* == Brand — green == */
+  --green-dark:               #00363D;
+  --green-900:                #00626E;
+  --green-500:                #22c55e;   
+  --red-400:                  #fb7185;   
+  --red-500:                  #f43f5e;
+
+  /* == Shadows — colors == */
+  --cyan-shadow-15:           #00DAF326;
+  --btn-shadow-60:            #ff5e00b3;
+  --btn-shadow-50:            #FE5F0080;
+  --btn-shadow-40:            #FE5F0066;
+  --btn-shadow-30:            #FE5F004D;
+
+  /* == width == */
+  --container-default:        92.5000vw;  /* -- 1184px -- */
+  --container-1232:           96.2500vw;  /* -- 1232px -- */
+  --w-896:                    70.0000vw;
+  --w-768:                    60.0000vw;
+  --w-554:                    43.2813vw;
+  --w-476:                    37.1875vw;
+  --w-256:                    20.0000vw;
+  --w-189:                    14.7656vw;
+  --w-96:                     7.5000vw;
+  --w-64:                     5.0000vw;
+  --w-60:                     4.6875vw;
+  --w-48:                     3.7500vw;
+  --w-45:                     3.5156vw;
+  --w-40:                     3.1250vw;
+  --w-30:                     2.3438vw;
+  --w-20:                     1.5625vw;
+  --w-16:                     1.2500vw;
+  --w-12:                     0.9375vw;
+  --w-10:                     0.7813vw;
+
+  /* == height == */
+  --h-217:                    16.9531vw;
+  --h-69:                     5.3906vw;
+  --h-40:                     3.1250vw;
+  --h-38:                     2.9688vw;
+  --h-35:                     2.7344vw;
+  --h-30:                     2.3438vw;
+  --h-20:                     1.5625vw;
+  --h-18:                     1.4063vw;
+  --h-16:                     1.2500vw;
+  --h-14:                     1.0938vw;
+  --h-12:                     0.9375vw;
+  --h-11:                     0.8594vw;
+  --h-10:                     0.7813vw;
+  --h-8:                      0.6250vw;
+  --h-4:                      0.3125vw;
+  
+  /* == Typho — font-sizes == */
+  --text-72:                  5.6250vw;
+  --text-64:                  5.0000vw;
+  --text-48:                  3.7500vw;
+  --text-40:                  3.1250vw;
+  --text-32:                  2.5000vw;
+  --text-30:                  2.3438vw;
+  --text-28:                  2.1875vw;
+  --text-24:                  1.8750vw;
+  --text-22:                  1.7188vw;
+  --text-20:                  1.5625vw;
+  --text-18:                  1.4063vw;
+  --text-16:                  1.2500vw;
+  --text-14:                  1.0938vw;
+  --text-13:                  1.0156vw;
+  --text-12:                  0.9375vw;
+  --text-11:                  0.8594vw;
+  --text-10:                  0.7813vw;
+
+  /* == line-height  == */
+  --leading-76:               5.9375vw;
+  --leading-64:               5.0000vw;
+  --leading-52:               4.0625vw;
+  --leading-48:               3.7500vw;
+  --leading-40:               3.1250vw;
+  --leading-38:               2.9688vw;
+  --leading-36:               2.8125vw;
+  --leading-32:               2.5000vw;
+  --leading-28:               2.1875vw;
+  --leading-26:               2.0313vw;
+  --leading-24:               1.8750vw;
+  --leading-20:               1.5625vw;
+  --leading-19:               1.4844vw;
+  --leading-18:               1.4063vw;
+  --leading-16:               1.2500vw;
+  --leading-15:               1.1719vw;
+  --leading-13:               1.0156vw;
+
+  /* == letter-speacing  == */
+  --tracking-1_6:              0.1250vw;
+  --tracking-1_44:            -0.1125vw;
+  --tracking-1_4:              0.1094vw;
+  --tracking-1_1:              0.0859vw;
+  --tracking-1:                0.0781vw;
+  --tracking-0_48:            -0.0375vw;
+  --tracking-0_8:             -0.0625vw;
+  --tracking-0_7:              0.0547vw;
+  --tracking-0_32:             0.0250vw;
+
+  /* == font-weight  == */
+  --font-bold:                700;
+  --font-semibold:            600;
+  --font-medium:              500;
+  --font-reguler:             400;
+
+  /* == padding  == */
+  --p-120:                    9.3750vw;
+  --p-80:                     6.2500vw;
+  --p-64:                     5.0000vw;
+  --p-60:                     4.6875vw;
+  --p-48:                     3.7500vw;
+  --p-40:                     3.1250vw;
+  --p-32:                     2.5000vw;
+  --p-28:                     2.1875vw;
+  --p-25:                     1.9531vw;
+  --p-24:                     1.8750vw;
+  --p-20:                     1.5625vw;
+  --p-16:                     1.2500vw;
+  --p-12:                     0.9375vw;
+  --p-10:                     0.7813vw;
+  --p-8:                      0.6250vw;
+  --p-6:                      0.4688vw;
+  --p-4:                      0.3125vw;
+
+  /* == margin  == */
+  --m-64:                     5.0000vw;
+  --m-48:                     3.7500vw;
+  --m-46:                     3.5937vw;
+  --m-40:                     3.1250vw;
+  --m-32:                     2.5000vw;
+  --m-24:                     1.8750vw;
+  --m-16:                     1.2500vw;
+  --m-12:                     0.9375vw;
+  --m-8:                      0.6250vw;
+  --m-4:                      0.3125vw;
+
+  /* == gap  == */
+  --gap-65:                   5.0781vw;
+  --gap-64:                   5.0000vw;
+  --gap-32:                   2.5000vw;
+  --gap-25:                   1.9531vw;
+  --gap-24:                   1.8750vw;
+  --gap-16:                   1.2500vw;
+  --gap-12:                   0.9375vw;
+  --gap-8:                    0.6250vw;
+  --gap-4:                    0.3125vw;
+
+  /* == border radius  == */
+  --radius-40:                3.1250vw;
+  --radius-24:                1.8750vw;
+  --radius-16:                1.2500vw;
+  --radius-12:                0.9375vw;
+  --radius-8:                 0.6250vw;
+  --radius-4:                 0.3125vw;
+
+  /* == border-width  == */
+  --border-4:                 0.3125vw;
+  --border-2:                 0.1563vw;
+  --border-1:                 0.0781vw;
+ 
+  /* Shadows & Gradients */
+  --shadow-default-desktop:   0 0.3125vw 1.5625vw var(--cyan-shadow-15);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & NORMALIZE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+[hidden] {
+  display: none !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+    scroll-behavior: smooth;
+  }
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-default);
+  color: var(--white);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-Archivo-Narrow);
+}
+h1,
+section h1 {
+  font-size: 44px;
+  line-height: 48px;
+  letter-spacing: -0.88px;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+h2,
+section h2 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+}
+h3,
+section h3 {
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+}
+h4,
+section h4 {
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+p {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-reguler);
+}
+
+/* --------------------------------------------------------------------------
+   4. GLOBAL CONTAINER & UTILITIES
+   -------------------------------------------------------------------------- */
+.unify-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  --bs-gutter-x: 0;
+}
+.unify-section {
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  position: relative;
+}
+.unify-heading-bottom-line {
+  width: 70px;
+  height: 4px;
+}
+.unify-line-fill-flat {
+  background: var(--cyan-default);
+  margin-inline: auto;
+}
+.unify-line-fill-gradient {
+  background: linear-gradient(to right, var(--cyan-400), var(--orange-default));
+  margin-inline: auto;
+}
+.unify-section-badge {
+  width: fit-content;
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  border-radius: 99px;
+  border-width: 1px;
+  border-style: solid;
+}
+.unify-list {
+  list-style: none;
+}
+.unify-list li {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. CORE BUTTON COMPONENTS & STATES
+   -------------------------------------------------------------------------- */
+.unify-btn {
+  font-family: var(--font-Archivo-Narrow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-bold);
+  position: relative;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  box-shadow: 0 0px 20px var(--btn-shadow-50);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+a.unify-btn {
+  text-decoration: none;
+}
+.unify-btn-pill:hover,
+.unify-btn:hover,
+.unify-btn--offer:hover,
+.unify-btn-primary:hover {
+  box-shadow: 0 0px 24px var(--btn-shadow-60);
+  transform: translateY(-2px);
+}
+.unify-btn:active {
+  background-color: var(--orange-default);
+  box-shadow: 0 0px 24px var(--btn-shadow-60);
+  transform: translateY(1px) scale(0.99);
+}
+.unify-btn:focus,
+.unify-btn:focus-visible,
+.unify-btn:focus-within {
+  background-color: var(--orange-default);
+  box-shadow: 0 0px 24px var(--btn-shadow-60);
+  outline: none;
+}
+.unify-btn:disabled,
+.unify-btn[disabled],
+.unify-btn.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: 0 0px 24px var(--btn-shadow-60);
+  transform: none;
+}
+.unify-btn-white-text,
+.unify-btn--white,
+.unify-btn.is-white-text {
+  color: var(--unify-btn-text-white) !important;
+}
+.unify-btn-white-text:hover,
+.unify-btn--white:hover,
+.unify-btn.is-white-text:hover {
+  color: var(--unify-btn-text-white) !important;
+  background-color: #FE5F00;
+  box-shadow: 0 4px 30px #FE5F0066;
+}
+.unify-btn-white-text:active,
+.unify-btn--white:active,
+.unify-btn.is-white-text:active {
+  color: var(--unify-btn-text-white) !important;
+  background-color: #FE5F00;
+  box-shadow: 0 4px 30px #FE5F0066;
+}
+.unify-btn-pill {
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.4px;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 12px 24px;
+  color: var(--orange-dark);
+  text-decoration: none;
+  background: var(--orange-default);
+  box-shadow: 0 0px 20px var(--btn-shadow-50);
+}
+.unify-btn-pill.unify-btn--sm,
+.unify-btn-turbo.unify-btn--sm {
+  font-size: 11px;
+  padding: 8px 18px;
+  letter-spacing: 0.5px;
+}
+.unify-btn-purchase {
+  font-family: var(--font-Archivo-Narrow);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 6px;
+  column-gap: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-bold);
+  position: relative;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  box-shadow: 0 0px 20px var(--btn-shadow-50);
+  padding: 12px 24px;
+  border-radius: 6px;
+  width: 100%;
+  line-height: 1.25;
+}
+.unify-btn-purchase-sub-text {
+  font-size: 8px;
+  line-height: 100%;
+  font-weight: var(--font-medium);
+  letter-spacing: 1px;
+}
+.unify-btn-purchase .unify-btn-purchase-main-text img {
+  display: block;
+  width: 12px;
+  height: auto;
+  background-size: cover;
+}
+.unify-btn-purchase .unify-btn-purchase-main-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+.unify-btn-purchase:hover .unify-btn-arrow,
+.unify-btn--purchase:hover .unify-btn-arrow,
+.unify-btn-checkout:hover .unify-btn-arrow {
+  transform: translateX(4px);
+}
+.unify-btn-payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  height: 48px;
+  transition: background-color 0.3s;
+}
+.unify-btn-payment img {
+  display: block;
+  width: auto;
+  height: 20px;
+  background-size: cover;
+}
+.unify-btn-payment:hover {
+  opacity: 0.8;
+}
+.unify-btn-payment.paypal {
+  background-color: #FFC439;
+}
+.unify-btn-payment.applepay {
+  background-color: #000;
+}
+.unify-btn-payment.gpay {
+  background-color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   8. DESKTOP RESPONSIVE STYLES (@media (min-width: 1024px))
+   Strictly using pure vw units from 1280px baseline (px / 1280 * 100vw)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  h1,
+  section h1 {
+    font-size: var(--text-72);
+    line-height: var(--leading-76);
+    letter-spacing: var(--tracking-1_44);
+  }
+  h2,
+  section h2 {
+    font-size: var(--text-48);
+    line-height: var(--leading-52);
+    letter-spacing: var(--tracking-0_48);
+  }
+  h3,
+  section h3 {
+    font-size: var(--text-32);
+    line-height: var(--leading-38);
+    letter-spacing: var(--tracking-0_8);
+  }
+  h4,
+  section h4 {
+    font-size: var(--text-24);
+    line-height: var(--leading-32);
+  }
+  p {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+  }
+  .unify-container {
+    max-width: var(--container-default) !important;
+    margin: 0 auto;
+    padding-inline: 0;
+    --bs-gutter-x: 1.6842vw;
+  }
+  .unify-section {
+    padding: var(--p-60) 0;
+  }
+  .unify-heading-bottom-line {
+    width: var(--w-96);
+    height: var(--h-4);
+  }
+  .unify-section-badge {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    font-weight: var(--font-bold);
+    padding: var(--p-4) var(--p-16);
+    gap: var(--gap-8);
+  }
+  .unify-btn,
+  .unify-btn--offer,
+  .unify-btn-primary {
+    font-size: var(--text-24);
+    line-height: var(--leading-36);
+    letter-spacing: var(--tracking-1);
+    padding: var(--p-20) var(--p-40);
+    border-radius: var(--radius-8);
+    gap: var(--gap-12);
+    row-gap: var(--gap-4);
+  }
+  .unify-btn-pill,
+  .unify-btn--pill,
+  .unify-btn-turbo {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    padding: var(--p-10) var(--p-24);
+    letter-spacing: var(--tracking-1_4);
+  }
+  .unify-btn-purchase .unify-btn-title,
+  .unify-btn--purchase .unify-btn-title,
+  .unify-btn-checkout .unify-btn-title {
+    font-size: var(--text-20);
+    line-height: 2.3438vw;
+    row-gap: var(--gap-8);
+    column-gap: var(--gap-4);
+  }
+  .unify-btn-purchase .unify-btn-purchase-main-text {
+    font-size: var(--text-20);
+    line-height: 2.3438vw;
+    row-gap: var(--gap-8);
+  }
+  .unify-btn-purchase-sub-text {
+    font-size: var(--text-11);
+    letter-spacing: var(--tracking-1_1);
+  }
+  .unify-btn-purchase .unify-btn-purchase-main-text img {
+    width: var(--w-16);
+  }
+  .unify-btn-purchase .unify-btn-subtext,
+  .unify-btn--purchase .unify-btn-subtext,
+  .unify-btn-checkout .unify-btn-subtext {
+    font-size: var(--text-12, 0.9375vw);
+    margin-top: 0.4688vw;
+    letter-spacing: 0.0781vw;
+  }
+  .unify-btn-order,
+  .unify-btn--order,
+  .unify-btn-upsell {
+    font-size: var(--text-20, 1.5625vw);
+    padding: 1.4063vw 3.2813vw;
+    border-radius: 0.9375vw;
+    max-width: 48.4375vw;
+    gap: 0.7813vw;
+  }
+  .unify-btn-order .unify-btn-arrow,
+  .unify-btn--order .unify-btn-arrow,
+  .unify-btn-upsell .unify-btn-arrow {
+    font-size: 1.5625vw;
+  }
+  .unify-btn-payment {
+    height: 3.7500vw;
+    border-radius: var(--radius-4);
+  }
+  .unify-btn-payment img {
+    height: 1.8750vw;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. KEYFRAME ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes unify-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

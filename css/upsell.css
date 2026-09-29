@@ -1,0 +1,540 @@
+
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. MAIN PAGE LAYOUT & WRAPPER
+   -------------------------------------------------------------------------- */
+.upsell-main {
+  width: 100%;
+  background-color: var(--bg-default);
+  position: relative;
+  box-sizing: border-box;
+}
+.upsell-section {
+  width: 100%;
+  background-color: var(--bg-default);
+}
+.upsell-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+.upsell-col-left {
+  width: 100%;
+  order: 1;
+  position: relative;
+}
+.upsell-col-left-badge-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.upsell-col-left-badge {
+  border: 1px solid #C3F5FF4D;
+  background-color: #353534CC;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+}
+.upsell-col-left-badge span {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+  line-height: normal;
+  color: var(--cyan-100);
+  text-transform: uppercase;
+}
+.upsell-col-left-badge img {
+  display: block;
+  width: 10px;
+  height: auto;
+  object-fit: cover;
+}
+.upsell-col-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 2;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. LEFT COLUMN: PRODUCT MEDIA CARD
+   -------------------------------------------------------------------------- */
+.upsell-product-card {
+  position: relative;
+  width: 100%;
+  background-color: #39393914;
+  border: 1px solid var(--white-15);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px #00DAF326;
+}
+
+.upsell-product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. RIGHT COLUMN: OFFER DETAILS & CONTENT
+   -------------------------------------------------------------------------- */
+/* 3.1 One-Time Offer Badge */
+.upsell-badge-wrap {
+  margin-bottom: 16px;
+}
+.upsell-offer-badge {
+  font-family: var(--font-JetBrains);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #93000A33;
+  border: 1px solid #FFB4AB33;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--orange-300);
+}
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--orange-300);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* 3.2 Titles & Typography */
+.upsell-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.upsell-title .title-alert {
+  color: var(--orange-300);
+}
+.upsell-subtitle {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: var(--font-semibold);
+  color: var(--cyan-400);
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.upsell-desc {
+  font-family: var(--font-inter);
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+  margin: 0 0 20px;
+}
+
+.upsell-desc strong {
+  font-weight: var(--font-bold);
+  color: var(--gray-400);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. PRICING & FEATURES CARD
+   -------------------------------------------------------------------------- */
+.upsell-pricing-card {
+  width: 100%;
+  background: #39393914;
+  border: 1px solid var(--white-15);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Features List (Left Sub-block) */
+.pricing-features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pricing-feature-item {
+  font-family: var(--font-inter);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--gray-300);
+  font-weight: var(--font-reguler);
+}
+.pricing-feature-item img {
+  display: block;
+  width: 12px;
+  height: auto;
+  object-fit: cover;
+}
+.feature-bolt-icon {
+  width: 10px;
+  height: 12px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.feature-bolt-icon path {
+  fill: var(--orange-default, #FE5F00);
+}
+
+/* Vertical / Horizontal Divider */
+.pricing-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray-750);
+}
+
+/* Price Details (Right Sub-block) */
+.pricing-card-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+.pricing-regular {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  line-height: 16px;
+  color: #6B7280;
+  margin-bottom: 2px;
+  font-weight: var(--font-reguler);
+}
+.price-strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: var(--gray-600);
+}
+.pricing-current {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: var(--font-bold);
+  color: var(--white);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+.pricing-savings-badge {
+  font-family: var(--font-JetBrains);
+  display: inline-block;
+  background-color: #FFB5991A;
+  color: var(--orange-400);
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. PRIMARY CTA BUTTON (.unify-btn-upsell)
+   -------------------------------------------------------------------------- */
+.unify-btn-upsell-cta {
+  width: 100%;
+  max-width: 100%;
+}
+.unify-btn-upsell-cta img {
+  display: block;
+  width: 12px;
+  height: auto;
+  background-size: cover;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. DECLINE OFFER LINK
+   -------------------------------------------------------------------------- */
+.upsell-decline-wrap {
+  width: 100%;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.upsell-decline-link {
+  font-family: var(--font-JetBrains);
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--gray-400);
+  text-decoration: underline;
+  text-decoration-color: rgba(186, 201, 204, 0.5);
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.upsell-decline-link:hover {
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
+
+.upsell-decline-link:focus-visible {
+  outline: 2px solid var(--cyan-default, #00E5FF);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. STEPPER ACTIVE STATES FOR BONUS DEALS STAGE
+   -------------------------------------------------------------------------- */
+.stepper-step.is-complete {
+  color: var(--cyan-200, #9CF0FF);
+  font-weight: var(--font-medium);
+}
+
+@media (min-width: 768px) {
+
+  .upsell-grid {
+    max-width: 640px;
+    margin: 0 auto;
+    gap: 28px;
+  }
+
+  .upsell-title {
+    font-size: 34px;
+    line-height: 38px;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+
+  .upsell-subtitle {
+    font-size: 21px;
+    line-height: 28px;
+    margin-bottom: 14px;
+  }
+
+  .upsell-desc {
+    font-size: 15px;
+    line-height: 23px;
+    margin-bottom: 22px;
+  }
+  .upsell-pricing-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    gap: 20px;
+  }
+
+  .pricing-card-divider {
+    width: 1px;
+    height: 68px;
+    align-self: stretch;
+  }
+
+  .pricing-card-values {
+    align-items: center;
+    min-width: 130px;
+  }
+
+  .pricing-current {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .upsell-page .unify-container {
+    max-width: 96.2500vw !important;
+  }
+  .checkout-page .unify-section.checkout-section {
+    padding: var(--p-64) 0;
+  }
+  .upsell-grid {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    gap: var(--gap-65);
+    width: 100%;
+    margin: 0 auto;
+  }
+  .upsell-col-left {
+    order: 1;
+    width: 100%;
+  }
+  .upsell-col-left-badge-list {
+    gap: var(--gap-8);
+    bottom: 1.2500vw;
+    left: 1.2500vw;
+  }
+  .upsell-col-left-badge {
+    border-width: var(--border-1);
+    border-radius: var(--radius-4);
+    padding: var(--p-4) var(--p-12);
+  }
+  .upsell-col-left-badge span {
+    font-size: var(--text-12);
+    line-height: var(--leading-18);
+    letter-spacing: 0.0469vw;
+  }
+  .upsell-col-left-badge img {
+    width: var(--w-10);
+    height: var(--h-10);
+    background-size: cover;
+  }
+  .upsell-col-right {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Left Column Media Card */
+  .upsell-product-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    box-shadow: 0 0.3125vw 1.5625vw #00DAF326;
+  }
+
+  /* One-Time Offer Badge */
+  .upsell-badge-wrap {
+    margin-bottom: var(--m-24);
+  }
+  .upsell-offer-badge {
+    gap: var(--gap-8);
+    padding: var(--p-4) var(--p-12);
+    border-radius: var(--radius-4);
+    border-width: var(--border-1);
+    font-size: var(--text-12);
+    line-height: var(--leading-18);
+    letter-spacing: 0.0938vw;
+  }
+  .badge-dot {
+    width:  0.6250vw;
+    height: 0.6250vw;
+  }
+
+  /* Main Title */
+  .upsell-title {
+    font-size: var(--text-48);
+    line-height: var(--leading-52);
+    letter-spacing: var(--tracking-0_48);
+    margin-bottom: var(--m-16);
+  }
+  /* Subtitle */
+  .upsell-subtitle {
+    font-size: var(--text-32);
+    line-height: var(--leading-38);
+    margin-bottom: var(--m-24);
+  }
+  /* Body Description */
+  .upsell-desc {
+    font-size: var(--text-16);
+    line-height: var(--leading-26);
+    margin-bottom: var(--m-32);
+    padding-right: 5vw;
+  }
+
+  /* Pricing & Features Card */
+  .upsell-pricing-card {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--radius-12);
+    border-width: var(--border-1);
+    padding: var(--p-24)  var(--p-28);
+    margin-bottom:  var(--m-32);
+    gap: 0;
+  }
+  .pricing-features-list {
+    gap: var(--gap-12);
+  }
+  .pricing-feature-item {
+    gap: var(--gap-12);
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .pricing-feature-item img {
+    width: var(--w-16);
+  }
+  .feature-bolt-icon {
+    width: 0.7813vw;  /* 10px */
+    height: 0.9375vw; /* 12px */
+  }
+  .pricing-card-divider {
+    width: var(--border-1); /* 1px */
+    height: 5.6250vw;       /* 72px */
+    align-self: stretch;
+  }
+  .pricing-card-values {
+    min-width: 10.9375vw; /* 140px */
+    align-items: center;
+    justify-content: center;
+    padding-left: var(--p-24);
+    border-left: 1px solid var(--white-10);
+    border-width: var(--border-1);
+  }
+  .pricing-regular {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    margin-bottom: var(--m-4);
+  }
+  .pricing-current {
+    font-size: var(--text-48);
+    line-height: var(--leading-52);
+    letter-spacing:  var(--tracking-0_48);
+    margin-bottom: var(--m-4);
+  }
+  .pricing-savings-badge {
+    font-size: var(--text-12);
+    line-height: 100%;
+    padding: var(--p-4) var(--p-8);
+    border-radius:  var(--radius-4);
+    letter-spacing: var(--tracking-0_7);
+  }
+
+  /* CTA Button */
+  .unify-btn-upsell-cta img {
+    width: var(--w-16);
+  }
+
+  /* Decline Link */
+  .upsell-decline-wrap {
+    margin-top: 1.4844vw; /* 19px */
+  }
+  .upsell-decline-link {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    text-underline-offset: 0.2344vw; /* 3px */
+  }
+}

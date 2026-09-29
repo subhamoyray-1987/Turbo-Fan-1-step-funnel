@@ -1,0 +1,335 @@
+
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. BASE / MOBILE VIEWS (till 767.98px)
+   -------------------------------------------------------------------------- */
+.unify-reviews {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Row */
+.pros-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+.pros-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.unify-reviews-heading {
+  margin-bottom: 0;
+  color: var(--gray-300);
+}
+.pros-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pros-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.pros-stars img {
+  display: block;
+  width: 20px;
+  height: auto;
+  background-size: cover;
+}
+.pros-rating-text {
+  font-family: var(--font-JetBrains);
+  font-weight: var(--font-medium);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-300);
+  letter-spacing: 0;
+}
+
+/* Right-side Pro Avatars Stack */
+.pros-avatar-group {
+  display: flex;
+  align-items: center;
+}
+.pros-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+.pros-avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-default);
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--gray-800);
+}
+.pros-avatar-img:not(:first-child) {
+  margin-left: -10px;
+}
+.pros-avatar-badge {
+  font-family: var(--font-JetBrains);
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  background-color: var(--cyan-default);
+  color: var(--green-900);
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--bg-default);
+  margin-left: -9px;
+  flex-shrink: 0;
+}
+
+/* Review Slider Wrapper & Slide Padding (Prevents Badge Cropping) */
+.pros-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+.pros-slider-wrapper .splide__arrows,
+.pros-slider-wrapper .splide__pagination {
+  display: none !important;
+}
+.pros-slider-wrapper .splide__track {
+  overflow: hidden;
+}
+.pros-slider-wrapper .splide__list {
+  display: flex;
+}
+.pros-slider-wrapper .splide__slide {
+  height: auto;
+  display: flex;
+  padding: 18px 14px 10px 14px;
+  box-sizing: border-box;
+}
+.pros-card {
+  position: relative;
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 14px;
+  padding: 24px;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+}
+
+/* Floating Quote Icon Badge */
+.pros-quote-badge {
+  position: absolute;
+  top: -14px;
+  left: -10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(254, 95, 0, 0.35);
+  z-index: 2;
+  flex-shrink: 0;
+}
+.pros-quote-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Quote Body Text */
+.pros-quote-text {
+  font-family: var(--font-inter);
+  font-weight: var(--font-reguler);
+  color: var(--gray-300);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+/* Author Metadata */
+.pros-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+.pros-author-avatar {
+  font-family: var(--font-inter);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--gray-750);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--gray-300);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pros-author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pros-author-name {
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-reguler);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-300);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.pros-author-status {
+  font-family: var(--font-inter);
+  font-weight: var(--font-reguler);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-600);
+}
+
+
+/* --------------------------------------------------------------------------
+   2. TABLET VIEWS (@media (min-width: 768px)) - 2 Slides Visible
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .unify-reviews {
+    padding: 60px 0;
+  }
+
+  .pros-header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+  }
+
+  .pros-avatar-badge {
+    font-size: 12px;
+  }
+
+  .pros-quote-badge {
+    width: 38px;
+    height: 38px;
+    top: -14px;
+    left: -10px;
+  }
+
+  .pros-quote-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .unify-section.unify-reviews {
+    padding: var(--p-60) 0;
+  }
+  .pros-header-row {
+    margin-bottom: var(--m-46);
+  }
+  .pros-title-block {
+    gap: var(--gap-16);
+  }
+  .pros-rating-row {
+    gap: var(--gap-8);
+  }
+  .pros-stars img {
+    width: var(--w-20);
+  }
+
+  .pros-rating-text {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+
+  /* Avatars */
+  .pros-avatar-img,
+  .pros-avatar-badge {
+    width:  var(--w-64);
+    height: var(--w-64);
+    border-width: var(--border-4);
+    margin-left: -0.9375vw;
+  }
+  .pros-avatar-img:not(:first-child) {
+    margin-left: -1.2500vw;
+  }
+
+  .pros-avatar-img:first-child {
+    margin-left: 0;
+  }
+  .pros-avatar-badge {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  /* Slide padding keeps quote badge completely uncropped */
+  .pros-slider-wrapper .splide__slide {
+    padding: 1.4063vw 1.0938vw 0.7813vw 1.0938vw;
+  }
+  .pros-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    padding: var(--p-32);
+    min-height: 17.6563vw;
+  }
+  .pros-quote-badge {
+    width:  var(--w-48);
+    height: var(--w-48);
+    top: -1.2500vw;
+    left: -0.9375vw;
+    box-shadow: 0 0.3125vw 1.0938vw rgba(254, 95, 0, 0.35);
+  }
+  .pros-quote-badge img {
+    width: auto;
+    height: var(--h-12);
+  }
+  .pros-quote-icon {
+    width: 1.2500vw;
+    height: 1.2500vw;
+  }
+  .pros-quote-text {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    margin-bottom: var(--m-24);
+  }
+  .pros-author-row {
+    gap: var(--gap-16);
+  }
+  .pros-author-avatar {
+    width: var(--w-48);
+    height: var(--w-48);
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+
+  .pros-author-name {
+    font-size: var(--text-20);
+    line-height: var(--leading-28);
+    letter-spacing: -0.0781vw;
+  }
+  .pros-author-status {
+    font-size: var(--text-16);
+    line-height: var(--leading-20);
+  }
+}

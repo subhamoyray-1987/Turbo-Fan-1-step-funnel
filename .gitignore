@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (if a build step / package.json is added later)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log

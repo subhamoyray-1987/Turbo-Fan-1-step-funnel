@@ -1,0 +1,1374 @@
+@import url('style.css');
+
+
+/* ==========================================================================
+   PART 1: BASE / MOBILE VIEWS
+   ========================================================================== */
+
+/* --- 1. HERO SECTION (Base / Mobile) --- */
+.unify-hero {
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-default);
+  padding: 32px 0;
+  overflow: hidden;
+}
+.unify-hero::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 0.1) 40%, rgba(19, 19, 19, 0) 100%);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.unify-container .unify-hero-row {
+  gap: 40px;
+  --bs-gutter-x: 0;
+}
+.unify-hero-left {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  order: 2;
+}
+.unify-section-badge.hero-badge {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.7px;
+  color: var(--cyan-100);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-color: var(--cyan-20);
+  background: var(--cyan-10);
+  margin-bottom: 14px;
+}
+.series-badge-icon {
+  width: 11px;
+  height: 11px;
+  color: var(--cyan-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.unify-hero-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.4px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.unify-hero-info {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+  margin-bottom: 26px;
+  max-width: 100%;
+}
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.btn-primary-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 6px;
+  box-shadow: 0 0 18px rgba(254, 95, 0, 0.55);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary-orange:hover {
+  background-color: var(--orange-600);
+  color: var(--orange-dark);
+  box-shadow: 0 0 26px rgba(254, 95, 0, 0.75);
+}
+.hero-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray-400);
+  font-family: var(--font-JetBrains);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.guarantee-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--orange-default);
+  flex-shrink: 0;
+}
+.unify-hero-right {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin-top: 24px;
+  background: #131313 url('../images/hero-bg.webp') no-repeat 56% 40% / 185% auto;
+  border-radius: 12px;
+  border: 1px solid var(--cyan-20);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 24px 32px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  order: 1;
+}
+.hero-device-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-gauge-card {
+  position: relative;
+  width: 150px;
+  background: var(--white-5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--white-10);
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 5;
+}
+.gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.gauge-label,
+.gauge-tag {
+  font-family: var(--font-JetBrains);
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: var(--font-medium);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--cyan-100);
+}
+.gauge-tag {
+  color: var(--orange-400);
+}
+.gauge-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 4px 0;
+}
+.gauge-bar-fill {
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan-default) 0%, #84cc16 65%, var(--orange-default) 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+  transition: 13s all;
+}
+.gauge-rpm-value {
+  font-family: var(--font-JetBrains);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-300);
+  text-align: right;
+}
+
+/* --- 2. ENGINEERED FOR VELOCITY (Base / Mobile) --- */
+.unify-velocity {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+}
+.velocity-heading-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.velocity-heading {
+  margin-bottom: 16px;
+}
+.velocity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+}
+.velocity-card {
+  background: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.velocity-card:hover {
+  border-color: var(--cyan-20);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 14px rgba(0, 229, 255, 0.12);
+}
+.velocity-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--cyan-10);
+  border: 1px solid var(--cyan-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.velocity-card:hover .velocity-icon-box {
+  background-color: #2c383c;
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.1);
+}
+.velocity-icon-box img {
+  display: block;
+  width: auto;
+  height: 20px;
+  background-size: cover;
+}
+.velocity-card-title {
+  color: var(--gray-300);
+  margin-bottom: 16px;
+}
+.velocity-card-desc {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-400);
+  margin-bottom: 0;
+}
+
+/* --- 3. VERSATILITY IN ACTION (Base / Mobile) --- */
+.unify-versatility {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+}
+.versatility-heading-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.versatility-heading {
+  margin-bottom: 16px;
+}
+.versatility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+}
+.versatility-card {
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.versatility-card:hover {
+  border-color: rgba(0, 218, 243, .2);
+  box-shadow: 0 0.7813vw 2.1875vw rgba(0, 0, 0, 0.65), 0 0 1.2500vw rgba(0, 229, 255, 0.14);
+}
+.versatility-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  background-color: #111111;
+}
+.versatility-img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: 0.4s all;
+}
+.versatility-card:hover .versatility-img {
+  transform: scale(1.05);
+}
+.versatility-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-grow: 1;
+}
+.versatility-card-title {
+  color: var(--cyan-100);
+  margin-bottom: 12px;
+}
+.versatility-card-desc {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-400);
+  margin-bottom: 0;
+}
+.versatility-card.card-span-2 {
+  position: relative;
+  padding: 24px 20px;
+}
+.versatility-card-list {
+  padding-left: 0;
+}
+.versatility-card.card-span-2 .versatility-card-title {
+  color: var(--gray-300);
+  margin-bottom: 16px;
+}
+.versatility-card-span-pattern {
+  width: 200px;
+  height: 200px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.08;
+}
+.versatility-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.versatility-card-list li {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-300);
+  font-weight: 400;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.versatility-card-list img {
+  display: block;
+  width: auto;
+  height: 20px;
+  background-size: cover;
+}
+.versatility-card:last-child {
+  align-items: center;
+  background: var(--cyan-default);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+}
+.versatility-card:last-child * {
+  color: var(--green-900);
+  text-transform: uppercase;
+  font-weight: var(--font-reguler);
+}
+.versatility-card:last-child span {
+  font-family: var(--font-JetBrains);
+  font-weight: var(--font-reguler);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+}
+.versatility-card:last-child p {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+.versatility-card:last-child p:nth-of-type(2) {
+  font-family: var(--font-JetBrains);
+  font-size: 12px;
+  line-height: 18px;
+}
+.versatility-card:last-child span:last-child {
+  font-family: var(--font-Archivo-Narrow);
+  letter-spacing: 0;
+}
+.versatility-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #00626E1A;
+  margin: 12px 0;
+}
+
+/* --- 4. WHAT THE PROS ARE SAYING (Base / Mobile) --- */
+.unify-reviews {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pros-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+.pros-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.unify-reviews-heading {
+  margin-bottom: 0;
+  color: var(--gray-300);
+}
+.pros-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pros-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.pros-stars img {
+  display: block;
+  width: 20px;
+  height: auto;
+  background-size: cover;
+}
+.pros-rating-text {
+  font-family: var(--font-JetBrains);
+  font-weight: var(--font-medium);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-300);
+  letter-spacing: 0;
+}
+.pros-avatar-group {
+  display: flex;
+  align-items: center;
+}
+.pros-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+.pros-avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-default);
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: var(--gray-800);
+}
+.pros-avatar-img:not(:first-child) {
+  margin-left: -10px;
+}
+.pros-avatar-badge {
+  font-family: var(--font-JetBrains);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--cyan-default);
+  color: var(--green-900);
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--bg-default);
+  margin-left: -9px;
+  flex-shrink: 0;
+}
+.pros-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+.pros-slider-wrapper .splide__arrows,
+.pros-slider-wrapper .splide__pagination {
+  display: none !important;
+}
+.pros-slider-wrapper .splide__track {
+  overflow: hidden;
+}
+.pros-slider-wrapper .splide__list {
+  display: flex;
+}
+.pros-slider-wrapper .splide__slide {
+  height: auto;
+  display: flex;
+  padding: 18px 14px 10px 14px;
+  box-sizing: border-box;
+}
+.pros-card {
+  position: relative;
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 14px;
+  padding: 24px;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+}
+.pros-quote-badge {
+  position: absolute;
+  top: -14px;
+  left: -10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(254, 95, 0, 0.35);
+  z-index: 2;
+  flex-shrink: 0;
+}
+.pros-quote-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.pros-quote-text {
+  font-family: var(--font-inter);
+  font-weight: var(--font-reguler);
+  color: var(--gray-300);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.pros-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+.pros-author-avatar {
+  font-family: var(--font-inter);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--gray-750);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--gray-300);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pros-author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pros-author-name {
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-reguler);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-300);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.pros-author-status {
+  font-family: var(--font-inter);
+  font-weight: var(--font-reguler);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-600);
+}
+
+/* --- 5. READY TO EXPERIENCE TURBO FORCE? (Base / Mobile) --- */
+.unify-section.unify-cta-banner {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  padding-bottom: 60px;
+  position: relative;
+}
+.cta-banner-card {
+  width: 100%;
+  background: linear-gradient(150deg, #2A2A2ACC, #131313CC);
+  border: 1px solid var(--cyan-20);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+.unify-section-badge {
+  border-color: #FFB4AB4D;
+  background: transparent;
+  color: var(--orange-300);
+}
+.unify-section-badge img {
+  display: block;
+  width: 12px;
+  height: auto;
+  background-size: cover;
+}
+.cta-banner-title {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: normal;
+  margin-top: 24px;
+}
+.cta-banner-title br {
+  display: none !important;
+}
+.highlight-cyan {
+  color: var(--cyan-default);
+}
+.cta-pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.cta-pricing-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.cta-price-label {
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-reguler);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--gray-600);
+}
+.cta-pricing-standard .cta-price-label {
+  color: var(--gray-600);
+}
+.cta-pricing-launch .cta-price-label {
+  color: var(--cyan-100);
+}
+.cta-price-value {
+  font-family: var(--font-JetBrains);
+  font-weight: 700;
+}
+.cta-price-strikethrough {
+  font-family: var(--font-Archivo-Narrow);
+  color: #84939680;
+  text-decoration: line-through;
+  text-decoration-color: #84939680;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: var(--font-reguler);
+}
+.cta-price-highlight {
+  font-family: var(--font-Archivo-Narrow);
+  color: var(--cyan-default);
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: var(--font-bold);
+}
+.cta-pricing-divider {
+  width: 1px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.16);
+  flex-shrink: 0;
+}
+.cta-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.cta-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 28px;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+  border-radius: 10px;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  box-shadow: 0 4px 24px var(--btn-shadow-50);
+  text-decoration: none;
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-banner-btn:hover {
+  background-color: var(--orange-600);
+  box-shadow: 0 4px 30px var(--btn-shadow-60);
+}
+.cta-guarantee-subtext {
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-600);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   PART 2: TABLET BREAKPOINT (@media (min-width: 768px))
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  /* --- 1. HERO SECTION (Tablet) --- */
+  .unify-hero {
+    padding: 50px 0 46px;
+    background-image: url('../images/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: 72% center;
+    background-size: cover;
+  }
+  .unify-hero::after {
+    background: linear-gradient(90deg, rgba(19, 19, 19, 0.88) 0%, rgba(19, 19, 19, 0.5) 55%, rgba(19, 19, 19, 0.1) 85%),
+                linear-gradient(180deg, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 0) 100%);
+  }
+  .landing-hero-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .series-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+  }
+  .unify-hero-title {
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: -0.6px;
+    margin-bottom: 18px;
+  }
+  .unify-hero-desc {
+    font-size: 14.5px;
+    line-height: 23px;
+    margin-bottom: 26px;
+    max-width: 380px;
+  }
+  .hero-cta-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    width: auto;
+  }
+  .btn-primary-orange {
+    width: auto;
+    font-size: 14.5px;
+    padding: 12px 26px;
+  }
+  .hero-guarantee {
+    font-size: 11.5px;
+  }
+  .unify-hero-right {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: visible;
+    order: 2;
+  }
+  .hero-device-wrapper {
+    height: 100%;
+    align-items: flex-end;
+  }
+  .hero-gauge-card {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 195px;
+    padding: 11px 14px;
+  }
+  .gauge-label, .gauge-tag {
+    font-size: 8px;
+  }
+  .gauge-rpm-value {
+    font-size: 11.5px;
+  }
+
+  /* --- 2. ENGINEERED FOR VELOCITY (Tablet) --- */
+  .unify-velocity {
+    padding: 60px 0;
+  }
+  .velocity-heading-wrapper {
+    margin-bottom: 40px;
+  }
+  .velocity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .velocity-card {
+    padding: 22px 20px;
+    border-radius: 12px;
+  }
+  .velocity-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  .velocity-desc {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* --- 3. VERSATILITY IN ACTION (Tablet) --- */
+  .unify-versatility {
+    padding: 52px 0 64px;
+  }
+  .versatility-heading-wrapper {
+    margin-bottom: 40px;
+  }
+  .versatility-accent-line {
+    width: 66px;
+    height: 3.5px;
+  }
+  .versatility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .versatility-card {
+    border-radius: 16px;
+  }
+  .versatility-img-wrap {
+    aspect-ratio: 16 / 10;
+  }
+  .versatility-body {
+    padding: 22px 18px 24px;
+  }
+
+  /* --- 4. WHAT THE PROS ARE SAYING (Tablet) --- */
+  .unify-reviews {
+    padding: 60px 0;
+  }
+  .pros-header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+  }
+  .pros-avatar-badge {
+    font-size: 12px;
+  }
+  .pros-quote-badge {
+    width: 38px;
+    height: 38px;
+    top: -14px;
+    left: -10px;
+  }
+  .pros-quote-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  /* --- 5. READY TO EXPERIENCE TURBO FORCE? (Tablet) --- */
+  .unify-cta-banner {
+    padding: 60px 0 80px;
+  }
+  .cta-banner-card {
+    border-radius: 28px;
+    padding: 50px 32px 44px;
+  }
+  .cta-stock-icon {
+    width: 13px;
+    height: 13px;
+  }
+  .cta-banner-title {
+    margin-bottom: 28px;
+  }
+  .cta-pricing-row {
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+  .cta-price-label {
+    font-size: 12px;
+  }
+  .cta-price-strikethrough {
+    font-size: 22px;
+  }
+  .cta-price-highlight {
+    font-size: 32px;
+  }
+  .cta-pricing-divider {
+    height: 44px;
+  }
+  .cta-btn-wrapper {
+    margin-bottom: 26px;
+  }
+  .cta-banner-btn {
+    max-width: 340px;
+    padding: 18px 32px;
+    font-size: 19px;
+  }
+  .cta-guarantee-subtext {
+    font-size: 12px;
+  }
+}
+
+
+/* ==========================================================================
+   PART 3: DESKTOP BREAKPOINT (@media (min-width: 1024px))
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  /* --- 1. HERO SECTION (Desktop) --- */
+  .unify-hero {
+    padding: var(--p-120) 0;
+    background-image: url('../images/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .unify-hero::after {
+    background: linear-gradient(90deg, rgba(19, 19, 19, 0.82) 0%, rgba(19, 19, 19, 0.38) 46%, rgba(19, 19, 19, 0) 68%),
+                linear-gradient(180deg, rgba(19, 19, 19, 0.35) 0%, rgba(19, 19, 19, 0) 100%);
+  }
+  .unify-hero-row {
+    --bs-gutter-x: 1.6842vw;
+    gap: 0;
+  }
+  .unify-hero-left {
+    width: auto;
+    order: 1;
+  }
+  .unify-section-badge.hero-badge {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: -0.0547vw;
+    padding: var(--p-6) var(--p-16);
+    margin-bottom: var(--m-24);
+    border-width: var(--border-1);
+    gap: var(--gap-8);
+  }
+  .unify-section-badge.hero-badge img {
+    display: block;
+    width: 0.7813vw;
+    height: auto;
+    background-size: cover;
+  }
+  .unify-hero-title {
+    font-size: var(--text-72);
+    line-height: var(--leading-76);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-1_44);
+    margin-bottom: var(--m-24);
+  }
+  .highlight-cyan {
+    color: var(--cyan-default);
+  }
+  .unify-hero-info {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    font-weight: var(--font-reguler);
+    color: var(--gray-400);
+    max-width: var(--w-554);
+    margin-bottom: var(--m-40);
+  }
+  .hero-cta-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8750vw;
+    width: auto;
+  }
+  .hero-guarantee {
+    font-family: var(--font-JetBrains);
+    font-weight: var(--font-medium);
+    color: var(--gray-600);
+    gap: var(--gap-12);
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: var(--tracking-0_7);
+  }
+  .hero-guarantee img {
+    display: block;
+    width: auto;
+    height: 1.5625vw;
+    background-size: cover;
+  }
+  .unify-hero-right,
+  .hero-device-wrapper {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+  .hero-gauge-card {
+    position: absolute;
+    right: 3.7500vw;
+    bottom: 3.7500vw;
+    left: auto;
+    z-index: 99;
+    width: var(--w-256);
+    border-radius: var(--radius-12);
+    border-width: var(--border-1);
+    padding: var(--p-16);
+    backdrop-filter: blur(0.6250vw);
+    -webkit-backdrop-filter: blur(0.6250vw);
+  }
+  .gauge-header {
+    margin-bottom: var(--m-8);
+  }
+  .gauge-label, .gauge-tag {
+    font-size: var(--text-10);
+    line-height: var(--leading-15);
+  }
+  .gauge-bar-track {
+    height: var(--h-8);
+    border-radius: var(--radius-24);
+    margin: var(--m-8) 0;
+  }
+  .gauge-bar-fill {
+    box-shadow: 0 0 0.4688vw rgba(0, 229, 255, 0.5);
+  }
+  .gauge-rpm-value {
+    font-size: var(--text-12);
+    line-height: var(--leading-18);
+  }
+
+  /* --- 2. ENGINEERED FOR VELOCITY (Desktop) --- */
+  .unify-section.unify-velocity {
+    padding: var(--p-60) 0;
+    padding-top: var(--p-120);
+  }
+  .velocity-heading-wrapper {
+    margin-bottom: var(--m-64);
+  }
+  .velocity-heading {
+    margin-bottom: var(--m-16);
+  }
+  .velocity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-32);
+  }
+  .velocity-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    padding: var(--p-40);
+  }
+  .velocity-card:hover {
+    transform: translateY(-0.1563vw);
+    border-color: rgba(0, 218, 243, .2);
+    box-shadow: 0 0.7813vw 2.1875vw rgba(0, 0, 0, 0.65), 0 0 1.2500vw rgba(0, 229, 255, 0.14);
+  }
+  .velocity-icon-box {
+    width: var(--w-64);
+    height: var(--w-64);
+    border-radius: var(--radius-12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: var(--border-1);
+    margin-bottom: var(--m-32);
+  }
+  .velocity-icon-box img {
+    display: block;
+    width: auto;
+    height: 2.3438vw;
+    background-size: cover;
+  }
+  .velocity-card-title {
+    margin-bottom: var(--m-16);
+  }
+  .velocity-card-desc {
+    font-size: var(--text-16);
+    line-height: var(--leading-26);
+  }
+
+  /* --- 3. VERSATILITY IN ACTION (Desktop) --- */
+  .unify-versatility {
+    padding: var(--p-60) 0;
+  }
+  .versatility-heading-wrapper {
+    margin-bottom: var(--m-64);
+  }
+  .versatility-heading {
+    margin-bottom: var(--m-16);
+  }
+  .versatility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-32);
+  }
+  .versatility-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+  }
+  .versatility-card:hover {
+    transform: translateY(-0.1563vw);
+  }
+  .versatility-img-wrap {
+    width: 100%;
+    height: var(--h-217);
+  }
+  .versatility-card-title {
+    margin-bottom: var(--m-16);
+  }
+  .versatility-body {
+    padding: var(--p-32);
+  }
+  .versatility-card-desc {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .versatility-card.card-span-2 {
+    grid-column: span 2;
+    padding: var(--p-60) var(--p-48);
+    border-radius: var(--radius-24);
+  }
+  .versatility-card-span-pattern {
+    width: 15.6250vw;
+    height: 15.6250vw;
+  }
+  .versatility-card.card-span-2 .versatility-card-title {
+    margin-bottom: var(--m-24);
+  }
+  .versatility-card-list {
+    padding-left: 0;
+    gap: var(--gap-16);
+  }
+  .versatility-card-list li {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    gap: var(--gap-16);
+  }
+  .versatility-card-list img {
+    width: auto;
+    height: var(--h-20);
+  }
+  .versatility-card:last-child {
+    align-items: center;
+    background: var(--cyan-default);
+    padding: var(--p-32);
+    border-radius: var(--radius-24);
+    gap: var(--gap-24);
+  }
+  .versatility-card:last-child span,
+  .versatility-card:last-child p:nth-of-type(2) {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    letter-spacing: var(--tracking-1_6);
+  }
+  .versatility-card:last-child p {
+    font-family: var(--font-Archivo-Narrow);
+    font-size: var(--text-64);
+    line-height: var(--leading-64);
+  }
+  .versatility-divider {
+    margin: var(--m-8) 0;
+  }
+
+  /* --- 4. WHAT THE PROS ARE SAYING (Desktop) --- */
+  .unify-section.unify-reviews {
+    padding: var(--p-60) 0;
+  }
+  .pros-header-row {
+    margin-bottom: var(--m-46);
+  }
+  .pros-title-block {
+    gap: var(--gap-16);
+  }
+  .pros-rating-row {
+    gap: var(--gap-8);
+  }
+  .pros-stars img {
+    width: var(--w-20);
+  }
+  .pros-rating-text {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .pros-avatar-img,
+  .pros-avatar-badge {
+    width: var(--w-64);
+    height: var(--w-64);
+    border-width: var(--border-4);
+    margin-left: -0.9375vw;
+  }
+  .pros-avatar-img:not(:first-child) {
+    margin-left: -1.2500vw;
+  }
+  .pros-avatar-img:first-child {
+    margin-left: 0;
+  }
+  .pros-avatar-badge {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .pros-slider-wrapper .splide__slide {
+    padding: 1.4063vw 1.0938vw 0.7813vw 1.0938vw;
+  }
+  .pros-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    padding: var(--p-32);
+    min-height: 17.6563vw;
+  }
+  .pros-quote-badge {
+    width: var(--w-48);
+    height: var(--w-48);
+    top: -1.2500vw;
+    left: -0.9375vw;
+    box-shadow: 0 0.3125vw 1.0938vw rgba(254, 95, 0, 0.35);
+  }
+  .pros-quote-badge img {
+    width: auto;
+    height: var(--h-12);
+  }
+  .pros-quote-icon {
+    width: 1.2500vw;
+    height: 1.2500vw;
+  }
+  .pros-quote-text {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    margin-bottom: var(--m-24);
+  }
+  .pros-author-row {
+    gap: var(--gap-16);
+  }
+  .pros-author-avatar {
+    width: var(--w-48);
+    height: var(--w-48);
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .pros-author-name {
+    font-size: var(--text-20);
+    line-height: var(--leading-28);
+    letter-spacing: -0.0781vw;
+  }
+  .pros-author-status {
+    font-size: var(--text-16);
+    line-height: var(--leading-20);
+  }
+
+  /* --- 5. READY TO EXPERIENCE TURBO FORCE? (Desktop) --- */
+  .unify-section.unify-cta-banner {
+    padding: var(--p-60) 0;
+    padding-bottom: var(--p-120);
+  }
+  .cta-banner-card {
+    border-radius: var(--radius-40);
+    border-width: var(--border-1);
+    padding: var(--p-80);
+  }
+  .unify-cta-banner .unify-section-badge {
+    margin-bottom: var(--m-24);
+  }
+  .unify-cta-banner .unify-section-badge img {
+    width: var(--w-12);
+  }
+  .cta-stock-icon {
+    width: 0.9375vw;  /* 12px */
+    height: 0.9375vw; /* 12px */
+  }
+  .cta-banner-title {
+    font-size: var(--text-72);
+    line-height: var(--leading-76);
+    letter-spacing: var(--tracking-1_44);
+    margin-bottom: var(--m-24);
+    margin-top: 0;
+  }
+  .cta-banner-title br {
+    display: block !important;
+  }
+  .cta-pricing-row {
+    gap: var(--gap-32);
+    margin-bottom: var(--m-48);
+  }
+  .cta-price-label {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    letter-spacing: 0.0625vw;
+    margin-bottom: 0.3125vw;   /* 4px */
+  }
+  .cta-price-strikethrough {
+    font-size: var(--text-30);
+    line-height: var(--leading-36);
+    line-height: 1.2;
+    color: #5E696D;
+    text-decoration-color: #5E696D;
+  }
+  .cta-price-highlight {
+    font-size: var(--text-48);
+    line-height: var(--leading-48);
+  }
+  .cta-pricing-divider {
+    width: 0.0781vw;
+    height: 3.4375vw; /* 44px */
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+  .cta-btn-wrapper {
+    margin-bottom: var(--m-32);
+  }
+  .cta-banner-btn {
+    width: auto;
+    min-width: 27.3438vw;  /* 350px */
+    height: 4.5313vw;      /* 58px */
+    padding: 0 2.5000vw;
+    font-size: var(--text-20); /* 1.5625vw / 20px */
+    line-height: 1.2;
+    letter-spacing: 0.0781vw;
+    border-radius: 0.7813vw; /* 10px */
+    box-shadow: 0 0.3125vw 2.3438vw var(--btn-shadow-50);
+  }
+  .cta-banner-btn:hover {
+    box-shadow: 0 0.3125vw 2.8125vw var(--btn-shadow-60);
+  }
+  .cta-guarantee-subtext {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+}

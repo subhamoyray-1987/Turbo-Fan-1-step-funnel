@@ -1,0 +1,314 @@
+
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. BASE / MOBILE VIEWS (till 767.98px)
+   -------------------------------------------------------------------------- */
+.unify-section.unify-cta-banner {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+/* Card Container */
+.cta-banner-card {
+  width: 100%;
+  background: linear-gradient(150deg, #2A2A2ACC, #131313CC);
+  border: 1px solid var(--cyan-20);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Stock Warning Badge */
+.unify-section-badge {
+  border-color: #FFB4AB4D;
+  background: transparent;
+  color: var(--orange-300);
+}
+.unify-section-badge img {
+  display: block;
+  width: 12px;
+  height: auto;
+  background-size: cover;
+}
+
+/* Section Title - Inherits H2 typography from style.css */
+.cta-banner-title {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: normal;
+  margin-top: 24px;
+}
+.cta-banner-title br {
+  display: none !important;
+}
+
+.highlight-cyan {
+  color: var(--cyan-default);
+}
+
+/* Pricing Row */
+.cta-pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.cta-pricing-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.cta-price-label {
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-reguler);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--gray-600);
+}
+
+.cta-pricing-standard .cta-price-label {
+  color: var(--gray-600);
+}
+
+.cta-pricing-launch .cta-price-label {
+  color: var(--cyan-100);
+}
+
+.cta-price-value {
+  font-family: var(--font-JetBrains);
+  font-weight: 700;
+}
+
+.cta-price-strikethrough {
+  font-family: var( --font-Archivo-Narrow);
+  color: #84939680;
+  text-decoration: line-through;
+  text-decoration-color: #84939680;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: var(--font-reguler);
+}
+.cta-price-highlight {
+  font-family: var( --font-Archivo-Narrow);
+  color: var(--cyan-default);
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: var(--font-bold);
+}
+
+.cta-pricing-divider {
+  width: 1px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.16);
+  flex-shrink: 0;
+}
+
+/* CTA Button Wrapper & Button */
+.cta-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.cta-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 28px;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+  border-radius: 10px;
+  background-color: var(--orange-default);
+  color: var(--orange-dark);
+  box-shadow: 0 4px 24px var(--btn-shadow-50);
+  text-decoration: none;
+  font-family: var(--font-Archivo-Narrow);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-banner-btn:hover {
+  background-color: var(--orange-600);
+  box-shadow: 0 4px 30px var(--btn-shadow-60);
+}
+
+/* Guarantee Subtext */
+.cta-guarantee-subtext {
+  font-family: var(--font-JetBrains);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-600);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. TABLET VIEWS (@media (min-width: 768px))
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .unify-cta-banner {
+    padding: 60px 0 80px;
+  }
+
+  .cta-banner-card {
+    border-radius: 28px;
+    padding: 50px 32px 44px;
+  }
+
+  .cta-stock-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .cta-banner-title {
+    margin-bottom: 28px;
+  }
+
+  .cta-pricing-row {
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .cta-price-label {
+    font-size: 12px;
+  }
+
+  .cta-price-strikethrough {
+    font-size: 22px;
+  }
+
+  .cta-price-highlight {
+    font-size: 32px;
+  }
+
+  .cta-pricing-divider {
+    height: 44px;
+  }
+
+  .cta-btn-wrapper {
+    margin-bottom: 26px;
+  }
+
+  .cta-banner-btn {
+    max-width: 340px;
+    padding: 18px 32px;
+    font-size: 19px;
+  }
+
+  .cta-guarantee-subtext {
+    font-size: 12px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .unify-section.unify-cta-banner {
+    padding: var(--p-60) 0;
+    padding-bottom: var(--p-120);
+  }
+
+  .cta-banner-card {
+    border-radius: var(--radius-40);
+    border-width: var(--border-1);  
+    padding: var(--p-80);
+  }
+
+  .unify-cta-banner .unify-section-badge {
+    margin-bottom:  var(--m-24);
+  }
+  .unify-cta-banner .unify-section-badge img {
+    width: var(--w-12);
+  }
+
+  .cta-stock-icon {
+    width: 0.9375vw;  /* 12px */
+    height: 0.9375vw; /* 12px */
+  }
+  .cta-banner-title {
+    font-size: var(--text-72);
+    line-height: var(--leading-76);
+    letter-spacing: var(--tracking-1_44);
+    margin-bottom: var(--m-24);
+    margin-top: 0;
+  }
+  .cta-banner-title br {
+    display: block !important;
+  }
+
+  /* Pricing Row */
+  .cta-pricing-row {
+    gap: var(--gap-32);
+    margin-bottom: var(--m-48);
+  }
+
+  .cta-price-label {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    letter-spacing: 0.0625vw;
+    margin-bottom: 0.3125vw;   /* 4px */
+  }
+  .cta-price-strikethrough {
+    font-size: var(--text-30);
+    line-height: var(--leading-36);
+    line-height: 1.2;
+    color: #5E696D;
+    text-decoration-color: #5E696D;
+  }
+  .cta-price-highlight {
+    font-size: var(--text-48);
+    line-height: var(--leading-48);
+  }
+  .cta-pricing-divider {
+    width: 0.0781vw;
+    height: 3.4375vw; /* 44px */
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+  .cta-btn-wrapper {
+    margin-bottom: var(--m-32);
+  }
+
+  .cta-banner-btn {
+    width: auto;
+    min-width: 27.3438vw;  /* 350px */
+    height: 4.5313vw;      /* 58px */
+    padding: 0 2.5000vw;
+    font-size: var(--text-20); /* 1.5625vw / 20px */
+    line-height: 1.2;
+    letter-spacing: 0.0781vw;
+    border-radius: 0.7813vw; /* 10px */
+    box-shadow: 0 0.3125vw 2.3438vw var(--btn-shadow-50);
+  }
+
+  .cta-banner-btn:hover {
+    box-shadow: 0 0.3125vw 2.8125vw var(--btn-shadow-60);
+  }
+
+  /* Subtext */
+  .cta-guarantee-subtext {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+}

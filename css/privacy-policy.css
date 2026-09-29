@@ -1,0 +1,590 @@
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. MAIN PAGE LAYOUT & WRAPPER
+   -------------------------------------------------------------------------- */
+.privacy-main {
+  width: 100%;
+  background-color: var(--bg-default);
+  position: relative;
+  box-sizing: border-box;
+}
+.privacy-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. HERO HEADER & BADGE
+   -------------------------------------------------------------------------- */
+   .privacy-page header {
+    border-bottom: 1px solid var(--white-5);
+   }
+.privacy-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.privacy-date-badge {
+  font-family: var(--font-JetBrains);
+  font-weight: var(--font-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #00E5FF1A;
+  border: 1px solid #00E5FF33;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cyan-400);
+  margin-bottom: 20px;
+}
+.privacy-badge-icon {
+  display: block;
+  width: auto;
+  height: 12px;
+  object-fit: cover;
+}
+.privacy-page-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: var(--font-bold);
+  color: var(--cyan-100);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px;
+}
+.privacy-intro-text {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+  margin: 0 auto;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. CONTENT GRID: SIDEBAR & MAIN CARD
+   -------------------------------------------------------------------------- */
+.privacy-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. LEFT COLUMN: STICKY NAVIGATION SIDEBAR
+   -------------------------------------------------------------------------- */
+.privacy-sidebar {
+  width: 100%;
+  display: none;
+}
+
+.privacy-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.privacy-nav-item {
+  margin: 0;
+}
+
+.privacy-nav-link {
+  font-family: var(--font-JetBrains);
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.privacy-nav-link:hover,
+.privacy-nav-link:focus-visible {
+  color: var(--cyan-default);
+  outline: none;
+}
+.privacy-nav-link.is-active {
+  color: var(--cyan-default);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. RIGHT COLUMN: MAIN PRIVACY POLICY CARD
+   -------------------------------------------------------------------------- */
+.privacy-content-card {
+  width: 100%;
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  box-shadow: 0 0 20px #00E5FF26;
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+/* 5.1 Generic Policy Section */
+.policy-section {
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 30px;
+}
+
+.policy-section-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: var(--font-semibold);
+  color: var(--cyan-400);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+}
+
+.policy-title-icon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--cyan-400, #00DAF3);
+  flex-shrink: 0;
+  display: block;
+}
+
+.policy-paragraph {
+  font-family: var(--font-inter);
+  font-size: 13.5px;
+  line-height: 22px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-300);
+  margin: 0;
+}
+
+/* 5.2 Section 02: Bullet Points with Bolt Icons */
+.policy-feature-list {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.policy-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-inter);
+  font-size: 13.5px;
+  line-height: 21px;
+  color: var(--gray-300);
+}
+
+.policy-bolt-icon {
+  width: 10px;
+  height: 12px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.policy-bolt-icon path {
+  fill: var(--orange-default, #FE5F00);
+}
+
+.policy-feature-item strong {
+  font-weight: var(--font-bold);
+}
+
+/* 5.3 Section 04: Data Security Amber Card */
+.policy-security-card {
+  position: relative;
+  background: linear-gradient(135deg, #FE5F001A 0%, rgba(38, 18, 10, 0.5) 100%);
+  border: 1px solid #FE5F004D;
+  border-radius: 8px;
+  padding: 20px 22px;
+  overflow: hidden;
+  scroll-margin-top: 30px;
+}
+.policy-security-card-pattern {
+  width: 85px;
+  height: 85px;
+  top: 30px;
+  right: 30px;
+  position: absolute;
+  opacity: .1;
+}
+
+.security-watermark {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  stroke: rgba(254, 95, 0, 0.12);
+  pointer-events: none;
+}
+
+.security-card-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.security-card-title {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: var(--font-semibold);
+  color: var(--orange-300);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  text-transform: capitalize;
+}
+.security-card-title img {
+  display: block;
+  width: auto;
+  height: 20px;
+  object-fit: cover;
+}
+.security-card-text {
+  font-family: var(--font-inter);
+  font-size: 13.5px;
+  line-height: 21px;
+  color: var(--gray-300);
+  font-weight: var(--font-reguler);
+  margin: 0;
+}
+.policy-security-card-pattern {
+  width: 6.6406vw;
+  height: 8.7500vw;
+  top: 1.2500vw;
+  right: 1.2500vw;
+}
+
+/* 5.4 Section 06: Your Rights 2-Box Grid */
+.policy-rights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.policy-right-box {
+  background-color: var(--white-5);
+  border: 1px solid var(--white-5);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.right-box-title {
+  font-family: var(--font-JetBrains);
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 6px;
+}
+
+.right-box-desc {
+  font-family: var(--font-inter);
+  font-size: 12.5px;
+  line-height: 18px;
+  color: var(--gray-400);
+  margin: 0;
+}
+
+/* 5.5 Section 07: Contact Us Action Box */
+.policy-contact-wrap {
+  margin-top: 24px;
+}
+
+.policy-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1E2223;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.policy-contact-pill:hover {
+  border-color: var(--cyan-400, #00DAF3);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.contact-mail-icon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--cyan-400, #00DAF3);
+}
+
+.contact-email-text {
+  font-family: var(--font-JetBrains);
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: var(--font-bold);
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+
+@media (min-width: 768px) {
+  .privacy-section {
+    padding: 44px 0 64px;
+  }
+
+  .privacy-page-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .privacy-intro-text {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .privacy-sidebar {
+    position: sticky;
+    top: 32px;
+  }
+
+  .privacy-nav-list {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  .privacy-content-card {
+    padding: 32px 28px;
+    gap: 32px;
+  }
+
+  .policy-rights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+
+@media (min-width: 1024px) {
+  .privacy-section {
+    padding: 3.7500vw 0 5.6250vw; /* 48px top, 72px bottom */
+  }
+  .privacy-page .unify-container {
+    max-width: 96.2500vw !important;
+  }
+
+  .privacy-hero {
+    margin-bottom: var(--m-64);
+  }
+
+  .privacy-date-badge {
+    gap: var(--gap-8);
+    padding: var(--p-4) var(--p-12);
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: var(--tracking-1_4);
+    margin-bottom: var(--m-32);
+  }
+  .privacy-date-badge img {
+    width: auto;
+    height: var(--h-12);
+  }
+  .privacy-page-title {
+    font-size:  var(--text-48);
+    line-height: 5.6250vw;
+    letter-spacing: var(--tracking-1_44);
+    margin-bottom: var(--m-24);
+  }
+
+  .privacy-intro-text {
+    font-size: 1.1719vw;  /* 15px */
+    line-height: 1.7188vw; /* 22px */
+    max-width: 46.8750vw; /* 600px */
+  }
+
+  /* 2-Column Grid */
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: 21.2500vw 1fr;
+    gap: var(--gap-48);
+    align-items: flex-start;
+  }
+  .privacy-sidebar {
+    position: sticky;
+    top: 2.5000vw; /* 32px */
+    display: block;
+  }
+  .privacy-nav-list {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: var(--gap-16);
+    padding-bottom: 0;
+    padding-left: 1.9531vw;
+    border-left: 1px solid var(--white-10);
+  }
+  .privacy-nav-list li {
+    list-style: none;
+    display: block;
+    height: auto;
+  }
+  .privacy-nav-link {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+    letter-spacing: var(--tracking-0_7);
+  }
+  .privacy-content-card {
+    width: var(--w-768);
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+    padding: var(--p-48);
+    gap: var(--gap-64);
+    box-shadow: 0 0 1.5625vw #00E5FF26;
+  }
+  .policy-section-title {
+    font-size: var(--text-32);
+    line-height: var(--leading-38);
+    gap: var(--gap-12);
+    margin-bottom: var(--m-24);
+  }
+  .policy-section-title  img {
+    width: auto;
+    height: var(--h-20);
+    object-fit: cover;
+  }
+  .policy-paragraph {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .policy-contact-wrap {
+    margin-top: var(--m-24);
+  }
+  .policy-feature-list {
+    gap: var(--gap-16);
+    margin-top: var(--m-24);
+  }
+
+  .policy-feature-item {
+    gap: 0.7813vw; /* 10px */
+    font-size: 1.0547vw;  /* 13.5px */
+    line-height: 1.6406vw; /* 21px */
+  }
+
+  .policy-bolt-icon {
+    width: 0.7813vw;  /* 10px */
+    height: 0.9375vw; /* 12px */
+    margin-top: 0.3125vw;
+  }
+
+  /* Data Security Box */
+  .policy-security-card {
+    padding: var(--p-32);
+    border-radius: var(--radius-8);
+  }
+
+  .security-watermark {
+    right: 1.5625vw; /* 20px */
+    width: 6.2500vw;  /* 80px */
+    height: 6.2500vw;
+  }
+  .security-card-title {
+    font-size: var(--text-32);
+    line-height: var(--leading-38);
+    gap: var(--gap-12);
+    margin-bottom: var(--m-24);
+  }
+  .security-card-title img  {
+    height: var(--h-20);
+  }
+  .security-card-text {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+
+  /* Rights 2-Column Grid */
+  .policy-rights-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.0938vw; /* 14px */
+    margin-top: 0.6250vw; /* 8px */
+  }
+
+  .policy-right-box {
+    padding: 1.2500vw 1.4063vw; /* 16px 18px */
+    border-radius: 0.4688vw; /* 6px */
+  }
+
+  .right-box-title {
+    font-size: 0.8594vw; /* 11px */
+    line-height: 1.1719vw;
+    letter-spacing: 0.0469vw;
+    margin-bottom: 0.4688vw; /* 6px */
+  }
+
+  .right-box-desc {
+    font-size: 0.9766vw;  /* 12.5px */
+    line-height: 1.4063vw; /* 18px */
+  }
+
+  /* Contact Pill */
+  .policy-contact-pill {
+    padding: 0.9375vw 1.4063vw; /* 12px 18px */
+    border-radius: 0.4688vw; /* 6px */
+    gap: 0.7813vw; /* 10px */
+  }
+
+  .contact-mail-icon {
+    width: 1.2500vw; /* 16px */
+    height: 1.2500vw;
+  }
+
+  .contact-email-text {
+    font-size: 1.0156vw; /* 13px */
+    line-height: 1.3281vw;
+  }
+}

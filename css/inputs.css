@@ -1,0 +1,521 @@
+/* ==========================================================================
+   AERO-FORCE: GLOBAL INPUT DESIGN SYSTEM (inputs.css)
+   Reusable form components matching design tokens & pixel-perfect baseline
+   - .unify-input (text, email, tel, number)
+   - .unify-select-dropdown (select wrapper with custom arrow & dynamic checkmark)
+   - .unify-select-bundle (interactive bundle deal radio card with hover, focus-in, active, selected states)
+   - .unify-checkbox (custom styled checkbox)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BASE INPUT (.unify-input)
+   -------------------------------------------------------------------------- */
+.unify-input {
+  width: 100%;
+  height: 48px;
+  background-color: var(--gray-850);
+  border: 1px solid var(--gray-750);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-family: var(--font-inter);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.unify-input::placeholder {
+  color: #BAC9CC80;
+  font-size: 14px;
+  font-weight: var(--font-reguler);
+  opacity: 1;
+}
+
+.unify-input:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: #1E1E1E;
+}
+
+.unify-input:focus,
+.unify-input:focus-within,
+.unify-input.is-focused {
+  border-color: var(--cyan-100);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Input with icon inside (e.g. Card number with lock, CVV with tooltip) */
+.unify-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.unify-input-wrapper .unify-input {
+  padding-right: 38px;
+}
+
+.unify-input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6E7A7E;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. SELECT DROPDOWN (.unify-select-dropdown)
+   Includes custom dropdown arrow and dynamic tick checkmark before the arrow
+   -------------------------------------------------------------------------- */
+.unify-select-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.unify-select-dropdown select.unify-select {
+  font-family: var(--font-inter);
+  width: 100%;
+  height: 44px;
+  background-color: var(--gray-850);
+  border: 1px solid var(--gray-750);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--white);
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.unify-select-dropdown select.unify-select.is-placeholder,
+.unify-select-dropdown select.unify-select:invalid {
+  color: #6E7A7E;
+}
+
+.unify-select-dropdown select.unify-select option {
+  background-color: #1A1A1A;
+  color: var(--white);
+  padding: 8px 12px;
+}
+
+.unify-select-dropdown select.unify-select option:disabled {
+  color: #6E7A7E;
+}
+
+.unify-select-dropdown select.unify-select:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: #1E1E1E;
+}
+
+.unify-select-dropdown select.unify-select:focus,
+.unify-select-dropdown select.unify-select:focus-within {
+  border-color: rgba(255, 255, 255, 0.45);
+  background-color: #1E1E1E;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Chevron arrow on the right */
+.unify-select-dropdown .select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: #8E9DA1;
+  pointer-events: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dynamic tick checkmark before the select arrow */
+.unify-select-dropdown .select-tick {
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.6);
+  width: 15px;
+  height: 15px;
+  color: var(--cyan-default);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Activated tick when option selected */
+.unify-select-dropdown.has-value .select-tick {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. BUNDLE RADIO DEAL SELECTOR (.unify-select-bundle)
+   Custom bundle card with default, hover, active, focus-in, and selected states
+   -------------------------------------------------------------------------- */
+.unify-select-bundle {
+  position: relative;
+  width: 100%;
+  background-color: var(--cyan-5);
+  border: 1px solid var(--gray-750);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.unify-select-bundle input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.bundle-left-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Custom Radio Indicator */
+.bundle-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-750);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.bundle-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--bg-default);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+.radio-credit-card {
+  background-color: var(--cyan-100);
+  border-color: var(--cyan-100);
+}
+.radio-credit-card .bundle-radio-dot {
+  background-color: var(--bg-default);
+}
+.bundle-title-group {
+  display: flex;
+  flex-direction: column;
+}
+.bundle-name {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: var(--font-bold);
+  color: var(--gray-300);
+  margin: 0;
+  letter-spacing: 0;
+}
+.bundle-save-tag {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: var(--font-bold);
+  color: var(--orange-400);
+}
+.bundle-price-group {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.bundle-original-price {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+  text-decoration: line-through;
+  margin: 0;
+}
+.bundle-final-price {
+  font-family: var(--font-inter);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: var(--font-bold);
+  color: var(--gray-300);
+  margin: 1px 0 0 0;
+}
+.bundle-final-price span.bundle-unit {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: var(--font-reguler);
+  color: var(--gray-400);
+}
+
+/* Deal Badges (Most Popular / Best Deal) */
+.bundle-badge {
+  font-family: var(--font-inter);
+  position: absolute;
+  top: -9px;
+  right: 14px;
+  font-size: 9.5px;
+  line-height: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+.bundle-badge-popular {
+  background-color: var(--cyan-100);
+  color: var(--green-dark);
+}
+.bundle-badge-best {
+  background-color: var(--orange-400);
+  color: var(--orange-900);
+}
+.bundle-badge img {
+  display: block;
+  width: auto;
+  height: 11px;
+  object-fit: cover;
+}
+
+/* States: Hover */
+.unify-select-bundle:hover {
+  background-color: #1B1B1B;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.unify-select-bundle:hover .bundle-radio-circle {
+  border-color: #6B7B80;
+}
+
+/* States: Active & Focus-in */
+.unify-select-bundle:active,
+.unify-select-bundle:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* States: Selected */
+.unify-select-bundle.is-selected,
+.unify-select-bundle:has(input[type="radio"]:checked) {
+  border-color: var(--cyan-100);
+  background-color: var(--black-50);
+}
+
+.unify-select-bundle.is-selected .bundle-radio-circle,
+.unify-select-bundle:has(input[type="radio"]:checked) .bundle-radio-circle {
+  border-color: var(--cyan-100);
+  background-color: var(--cyan-100);
+}
+
+.unify-select-bundle.is-selected .bundle-radio-dot,
+.unify-select-bundle:has(input[type="radio"]:checked) .bundle-radio-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. CHECKBOX (.unify-checkbox-label)
+   -------------------------------------------------------------------------- */
+.unify-checkbox-label {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: normal;
+  font-weight: var(--font-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cyan-100);
+  cursor: pointer;
+  user-select: none;
+}
+.unify-checkbox-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.credit-card-checkbox {
+  font-weight: var(--font-reguler);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-300);
+}
+.unify-checkbox-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--cyan-100);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.unify-checkbox-box svg {
+  width: 11px;
+  height: 11px;
+  color: var(--white);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.unify-checkbox-label input[type="checkbox"]:checked ~ .unify-checkbox-box {
+  background-color: var(--cyan-100);
+  border-color: var(--cyan-100);
+}
+
+.unify-checkbox-label input[type="checkbox"]:checked ~ .unify-checkbox-box svg {
+  color: #071C1F;
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. DESKTOP ADAPTATIONS (@media (min-width: 1024px))
+   vw units computed from 1280px baseline (px / 1280 * 100vw)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .unify-input, .unify-select-dropdown select.unify-select {
+    height: auto;
+    border-radius: var(--radius-4);
+    padding: var(--p-10) var(--p-12);
+    font-size: var(--text-16);
+    line-height: var(--leading-16);
+  }
+  .unify-input::placeholder {
+    font-size: var(--text-16);
+    line-height: var(--leading-16);
+  }
+  .unify-select-dropdown select.unify-select {
+    line-height: var(--leading-20);
+  }
+  .unify-input-wrapper .unify-input {
+    padding-right: 2.9688vw; /* 38px */
+  }
+  .unify-input-icon {
+    right: 0.9375vw; /* 12px */
+    width: 1.2500vw; /* 16px */
+    height: 1.2500vw;
+  }
+
+  .unify-select-dropdown .select-arrow {
+    right: 1.0938vw; /* 14px */
+    width: 1.0938vw; /* 14px */
+    height: 1.0938vw;
+  }
+  .unify-select-dropdown .select-tick {
+    right: 2.6563vw; /* 34px */
+    width: 1.1719vw; /* 15px */
+    height: 1.1719vw;
+  }
+  .unify-select-bundle {
+    border-radius: var(--radius-8);
+    padding:  var(--p-16);
+    margin-bottom: var(--m-16);
+  }
+  .bundle-left-content {
+    gap: var(--gap-16);
+  }
+  .bundle-radio-circle {
+    width: var(--w-20);
+    height: var(--h-20);
+  }
+  .bundle-radio-dot {
+    width: 0.6250vw; /* 8px */
+    height: 0.6250vw;
+  }
+  .bundle-name {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+  }
+  .bundle-save-tag {
+    font-size:  var(--text-14);
+    line-height: var(--leading-20);
+  }
+  .bundle-original-price {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+  }
+  .bundle-final-price {
+    font-size: var(--text-20);
+    line-height: var(--leading-28);
+  }
+  .bundle-final-price span.bundle-unit {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+  }
+  .bundle-badge {
+    top: -0.7813vw;
+    right: 1.2500vw;  
+    font-size: var(--text-11);
+    line-height:  var(--leading-16);
+    padding: var(--p-4) var(--p-8);
+    border-radius: 0.3125vw;
+  }
+  .bundle-badge img {
+    height: var(--h-11);
+  }
+  .warranty-arrows-left img {
+    min-width:  var(--h-11);
+  }
+  .unify-checkbox-label {
+    gap: var(--gap-8);
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .credit-card-checkbox {
+    font-size: var(--text-14);
+    line-height: var(--leading-20);
+  }
+  .unify-checkbox-box {
+    width: 1.3281vw; /* 17px */
+    height: 1.3281vw;
+    border-radius: 0.3125vw;
+  }
+  .unify-checkbox-box svg {
+    width: 0.8594vw;
+    height: 0.8594vw;
+  }
+}

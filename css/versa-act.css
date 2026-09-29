@@ -1,0 +1,281 @@
+
+
+@import url('style.css');
+
+/* --------------------------------------------------------------------------
+   1. BASE / MOBILE VIEWS (till 767.98px)
+   -------------------------------------------------------------------------- */
+.unify-versatility {
+  width: 100%;
+  background-color: var(--bg-default);
+  padding: 45px 0;
+  position: relative;
+}
+
+/* Section Heading & Accent Line */
+.versatility-heading-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.versatility-heading {
+  margin-bottom: 16px;
+}
+
+/* Cards Grid (Stacked on Mobile) */
+.versatility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+}
+.versatility-card {
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.versatility-card:hover {
+  border-color: rgba(0, 218, 243, .2);
+  box-shadow: 0 0.7813vw 2.1875vw rgba(0, 0, 0, 0.65), 0 0 1.2500vw rgba(0, 229, 255, 0.14);
+}
+
+/* Card Image Wrapper */
+.versatility-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  background-color: #111111;
+}
+.versatility-img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: 0.4s all;
+}
+.versatility-card:hover .versatility-img {
+  transform: scale(1.05);
+}
+
+/* Card Content Body */
+.versatility-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-grow: 1;
+}
+.versatility-card-title {
+  color: var(--cyan-100);
+  margin-bottom: 12px;
+}
+.versatility-card-desc {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-400);
+  margin-bottom: 0;
+}
+.versatility-card.card-span-2 {
+  position: relative;
+  padding: 24px 20px ;
+}
+.versatility-card-list {
+  padding-left: 0;
+}
+.versatility-card.card-span-2 .versatility-card-title {
+  color: var(--gray-300);
+  margin-bottom: 16px;
+}
+.versatility-card-span-pattern {
+  width: 200px;
+  height: 200px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.08;
+}
+.versatility-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.versatility-card-list li {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray-300);
+  font-weight: 400;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.versatility-card-list img {
+  display: block;
+  width: auto;
+  height: 20px;
+  background-size: cover;
+}
+.versatility-card:last-child {
+  align-items: center;
+  background: var(--cyan-default);
+  padding: 24px 20px ;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+}
+.versatility-card:last-child * {
+  color: var(--green-900);
+  text-transform: uppercase;
+  font-weight: var(--font-reguler);
+}
+.versatility-card:last-child span {
+  font-family: var(--font-JetBrains);
+  font-weight: var(--font-reguler);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+}
+.versatility-card:last-child p {
+  font-family: var(--font-Archivo-Narrow);
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+.versatility-card:last-child p:nth-of-type(2) {
+  font-family: var(--font-JetBrains);
+  font-size: 12px;
+  line-height: 18px;
+}
+.versatility-card:last-child span:last-child {
+  font-family: var(--font-Archivo-Narrow);
+  letter-spacing: 0;
+}
+.versatility-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #00626E1A;
+  margin: 12px 0;
+}
+
+
+@media (min-width: 768px) {
+  .unify-versatility {
+    padding: 52px 0 64px;
+  }
+
+  .versatility-heading-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .versatility-accent-line {
+    width: 66px;
+    height: 3.5px;
+  }
+
+  .versatility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .versatility-card {
+    border-radius: 16px;
+  }
+
+  .versatility-img-wrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .versatility-body {
+    padding: 22px 18px 24px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .unify-versatility {
+    padding: var(--p-60) 0;
+  }
+  .versatility-heading-wrapper {
+    margin-bottom:  var(--m-64);
+  }
+  .versatility-heading {
+    margin-bottom: var(--m-16);
+  }
+  .versatility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap:  var(--gap-32);
+  }
+  .versatility-card {
+    border-radius: var(--radius-16);
+    border-width: var(--border-1);
+  }
+  .versatility-card:hover {
+    transform: translateY(-0.1563vw);
+  }
+  .versatility-img-wrap {
+    width: 100%;
+    height: var(--h-217);
+  }
+  .versatility-card-title {
+    margin-bottom: var(--m-16);
+  }
+  .versatility-body {
+    padding:  var(--p-32);
+  }
+  .versatility-card-desc {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+  }
+  .versatility-card.card-span-2 {
+    grid-column: span 2;
+    padding: var(--p-60) var(--p-48);
+    border-radius: var(--radius-24);
+  }
+  .versatility-card-span-pattern {
+    width: 15.6250vw;
+    height: 15.6250vw;
+  }
+  .versatility-card.card-span-2 .versatility-card-title {
+    margin-bottom: var(--m-24);
+  }
+  .versatility-card-list {
+    padding-left: 0;
+    gap: var(--gap-16);
+  }
+  .versatility-card-list li  {
+    font-size: var(--text-18);
+    line-height: var(--leading-28);
+    gap: var(--gap-16);
+  }
+  .versatility-card-list img {
+    width: auto;
+    height: var(--h-20);
+  }
+  .versatility-card:last-child {
+    align-items: center;
+    background: var(--cyan-default);
+    padding: var(--p-32);
+    border-radius: var(--radius-24);
+    gap: var(--gap-24);
+  }
+  .versatility-card:last-child span,
+  .versatility-card:last-child p:nth-of-type(2) {
+    font-size: var(--text-16);
+    line-height: var(--leading-24);
+    letter-spacing: var(--tracking-1_6);
+  }
+  .versatility-card:last-child p {
+    font-family: var(--font-Archivo-Narrow);
+    font-size: var(--text-64);
+    line-height: var(--leading-64);
+  }
+  .versatility-divider {
+    margin:  var(--m-8) 0;
+  }
+}
